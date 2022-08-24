@@ -2,6 +2,7 @@
 <html class="page" lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <title>Барбершоп «Бородинский»</title>
 </head>
@@ -10,17 +11,17 @@
   <a class="page-header__logo">
     <img src="img/logotypeMobile.svg" width="226" height="30" alt="Барбершоп «Бородинский»">
   </a>
-  <nav class="main-nav">
+  <nav class="main-nav main-nav--closed">
     <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
     <div class="main-nav__wrapper">
       <ul class="main-nav__list site-list">
-        <li class="site-list__item site-list__item--active">
+        <li class="site-list__item site-list__item--current">
           <a>
             Главная
           </a>
         </li>
         <li class="site-list__item">
-          <a href="photo.html">
+          <a href="#">
             Наши работы
           </a>
         </li>
@@ -40,14 +41,13 @@
           </a>
         </li>
       </ul>
-      <div class="main-nav__list user-list">
-        <a class="user-list__login" href="login.html">
-          <svg class="user-list__login-icon" width="16" height="16">
-            <use xlink:href="img/sprite.svg#icon-login"></use>
+        <a class="user-login" href="login.html">
+          <svg class="user-login__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 2H14V14H7V16H16V0H7V2Z" fill="white"/>
+            <path d="M7 9H0V7H7V4L11 8L7 12V9Z" fill="white"/>
           </svg>
           Войти
         </a>
-      </div>
     </div>
   </nav>
 </header>

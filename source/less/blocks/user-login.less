@@ -1,0 +1,25 @@
+.user-login {
+  position: relative;
+  display: block;
+  line-height: 24px;
+  color: @basic-white;
+  background-color: @dark-brown;
+  padding: 19px 0px;
+  padding-left: 47px;
+
+  &:active {
+    background-color: @medium-brown;
+    .user-list__login-icon {
+      fill-opacity: 1;
+    }
+  }
+}
+
+.user-login__icon {
+  position: absolute;
+  top: 23px;
+  left: 19px;
+  width: 16px;
+  height: 16px;
+  fill-opacity: 0.3;
+}
