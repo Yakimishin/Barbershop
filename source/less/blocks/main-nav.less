@@ -69,27 +69,7 @@
   }
 }
 
-.main-nav--opened .main-nav__wrapper {
-  position: absolute;
-    top: 0;
-    right: 0;
-    left: 70px;
-    z-index: 2;
-    min-height: 80vh;
-    background-color: @dark-brown;
-}
-// накладываем тень как псевдоэлемент, потому что иначе она обволакивает всю
-// обёртку, а мне нужно только справа.
-.main-nav--opened .main-nav__wrapper::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    width: 7px;
-    height: 100%;
-    box-shadow: inset 4px 0 7px -2px fade(#000000, 40%);
-  }
+
 
 // Прописали, чтобы только на мобильном скрывались неактывные пункты меню.
 // Такое поведение опасно и непредсказуемо, могло появиться там, где мне
@@ -108,12 +88,51 @@
   .main-nav--closed .user-login {
     display: none;
   }
+
+  .main-nav--opened .main-nav__wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 70px;
+    z-index: 2;
+    min-height: 80vh;
+    background-color: @dark-brown;
+  }
+  // накладываем тень как псевдоэлемент, потому что иначе она обволакивает всю
+  // обёртку, а мне нужно только справа.
+
+  .main-nav--opened .main-nav__wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 7px;
+    height: 100%;
+    box-shadow: inset 4px 0 7px -2px fade(#000000, 40%);
+  }
+
+  // Делаю так, чтобы если вдруг JS не сработал, меню всё равно было бы
+  // доступно и им можно было пользоваться.
+
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav--nojs .main-nav__wrapper {
+    position: static;
+    min-height: 0;
+  }
+
+  .main-nav--nojs .site-list__item {
+    display: block;
+  }
+
+  .main-nav--nojs .user-login{
+    display: block;
+  }
 }
 
-.main-nav__list {
-  margin: 0;
-  padding: 0;
-}
 
 @media (min-width: @tablet-width) {
   .main-nav__wrapper {

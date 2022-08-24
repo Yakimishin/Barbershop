@@ -11,32 +11,32 @@
   <a class="page-header__logo">
     <img src="img/logotypeMobile.svg" width="226" height="30" alt="Барбершоп «Бородинский»">
   </a>
-  <nav class="main-nav main-nav--closed">
+  <nav class="main-nav main-nav--closed main-nav--nojs">
     <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
     <div class="main-nav__wrapper">
       <ul class="main-nav__list site-list">
         <li class="site-list__item site-list__item--current">
-          <a>
+          <a class="site-list__link">
             Главная
           </a>
         </li>
         <li class="site-list__item">
-          <a href="#">
+          <a class="site-list__link" href="#">
             Наши работы
           </a>
         </li>
         <li class="site-list__item">
-          <a href="form.html">
+          <a class="site-list__link" href="form.html">
             Записаться
           </a>
         </li>
         <li class="site-list__item">
-          <a href="#">
+          <a class="site-list__link" href="#">
             Контакты
           </a>
         </li>
         <li class="site-list__item">
-          <a href="#">
+          <a class="site-list__link" href="#">
             HTML Academy
           </a>
         </li>
@@ -240,5 +240,20 @@
     </div>
   </div>
 </footer>
+
+<script>
+  var navMain = document.querySelector('.main-nav');
+  var navToggle = document.querySelector('.main-nav__toggle');
+
+  // Если JS подключился, убираем модификатор с навигации,
+  // который отображает меню в статике.
+
+  navMain.classList.remove('main-nav--nojs');
+
+  navToggle.addEventListener('click', function() {
+    navMain.classList.toggle('main-nav--closed');
+    navMain.classList.toggle('main-nav--opened');
+  });
+</script>
 </body>
 </html>
