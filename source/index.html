@@ -70,11 +70,6 @@
           точного подхода. Обратимся<br>
           к статистике:
         </p>
-        <p class="stats__legend stats__legend--top">
-          <small>
-            * — приведённые данные ложь
-          </small>
-        </p>
       </header>
       <dl class="stats__list">
         <div class="stats__item">
@@ -109,14 +104,11 @@
             500 000<sup>*</sup>
           </dt>
           <dd class="stats__description">
-            рублей<br>
-            вложений
+            лайков<br>
+            и комплиментов
           </dd>
         </div>
       </dl>
-      <small class="stats__legend stats__legend--bottom">
-        * — приведённые данные ложь
-      </small>
     </div>
   </section>
 
@@ -241,20 +233,6 @@
   </div>
 </footer>
 
-<script>
-  var navMain = document.querySelector('.main-nav');
-  var navToggle = document.querySelector('.main-nav__toggle');
-
-  // Если JS подключился, убираем модификатор с навигации,
-  // который отображает меню в статике. Его я ставил на тот случай, если
-  // вдруг JS не сработает.
-
-  navMain.classList.remove('main-nav--nojs');
-
-  navToggle.addEventListener('click', function() {
-    navMain.classList.toggle('main-nav--closed');
-    navMain.classList.toggle('main-nav--opened');
-  });
-</script>
+<script src="js/main.js" type="text/javascript"></script>
 </body>
 </html>
