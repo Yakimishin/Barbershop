@@ -9,7 +9,7 @@
 
   &:active {
     background-color: @medium-brown;
-    .user-list__login-icon {
+    .user-login__icon {
       fill-opacity: 1;
     }
   }
@@ -22,4 +22,63 @@
   width: 16px;
   height: 16px;
   fill-opacity: 0.3;
+}
+
+
+@media (min-width: @tablet-width) {
+  .user-login {
+    background-color: transparent;
+    font-size: 0px;
+
+    &:active {
+      background-color: transparent;
+    }
+  }
+
+  .user-login__icon {
+    top: 28px;
+    left: 0px;
+    fill-opacity: 1;
+
+    &:hover path{
+      fill: @basic-brown;
+    }
+
+    &:active path {
+      fill: fade(@basic-white, 30%);
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .user-login {
+    width: 64px;
+    padding: 30px;
+    padding-left: 47px;
+    font-size: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: @basic-white;
+      color: @basic-black;
+    }
+
+    &:active {
+      color: fade(@basic-black, 30%);
+    }
+
+    &:hover path{
+      fill: fade(@basic-black, 30%);
+    }
+
+    &:active path {
+      fill: fade(@basic-black, 10%);
+    }
+  }
+
+  .user-login__icon {
+    left: 19px;
+    top: 34px;
+  }
 }
