@@ -1,10 +1,5 @@
 var navMain = document.querySelector('.main-nav');
 var navToggle = document.querySelector('.main-nav__toggle');
-var statsItemHeight = document.querySelector('.stats__item').clientHeight;
-var statsWrapper = document.querySelector('.stats__wrapper');
-
-
-statsWrapper.style.top = (-statsItemHeight+'px');
 
 
 // Если JS подключился, убираем модификатор с навигации,
@@ -17,4 +12,33 @@ navToggle.addEventListener('click', function() {
   navMain.classList.toggle('main-nav--closed');
   navMain.classList.toggle('main-nav--opened');
 });
+
+
+// Пытался подключить динамический отступ .stats , чтобы он зависел от высоты верхнего
+// элемента. Почему то начинает работать , только когда таскать окно туда сюда,
+// а изначально отступа нет вообще. Пока не понял как решить. Придется прописывать фиксированный.
+
+// var statsHeaderHeight = document.querySelector('.stats__header').clientHeight;
+// var statsItemHeight = document.querySelector('.stats__item').clientHeight;
+// var statsWrapper = document.querySelector('.stats__wrapper');
+
+// window.addEventListener('resize', function(event){
+//   const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+//   if(viewportWidth > 768) {
+//     statsWrapper.style.top = (-statsHeaderHeight+'px');
+//     statsWrapper.style.marginBottom = (-statsHeaderHeight+'px');
+//   }
+
+//   if(viewportWidth > 1199) {
+//   statsWrapper.style.top = (-statsItemHeight+'px');
+//   statsWrapper.style.marginBottom = (-statsItemHeight+'px');
+//   }
+// });
+
+
+
+
+
+
+
 
